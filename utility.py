@@ -79,6 +79,15 @@ def showAllDenoised():
         print("the image was saved as",newName)
         show_my_matrix(newDenoisedVersion, 'surface'+str(k+1))
 
+def calculateBest():
+    output = get_function()
+    for k in range(0,30):
+        newDenoisedVersion = process(k, output)
+        newName = ".\\SecondPart\\format1\\F1__"+str(k+1)+".jpg"
+        plt.imsave(newName, newDenoisedVersion)
+        print("the image was saved as",newName)
+        show_my_matrix(newDenoisedVersion, 'surface'+str(k+1))
+
 
 #if we un-comment the next line we will get a view of all of the figures and how they look, after analysing we cant tell k=13+1 is the closer one
 # showAllDenoised()
