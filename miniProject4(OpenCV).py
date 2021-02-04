@@ -25,7 +25,7 @@ def process(k, rgbChannel ):
     #U*S*Vᵗ = Noisy_Matrix
     global img
     imageChannel = img[:,:,rgbChannel]
-    U, S, V = np.linalg.svd(imageChannel)y
+    U, S, V = np.linalg.svd(imageChannel)
     #Taking SVD computation as A= U D (V^T), For U, D, V = np.linalg.svd(A), this function returns V in Vᵗ form already.
     height, width = imageChannel.shape
     R = np.zeros((height, width))
