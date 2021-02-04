@@ -79,21 +79,46 @@ def showAllDenoised():
         print("the image was saved as",newName)
         show_my_matrix(newDenoisedVersion, 'surface'+str(k+1))
 
+def getDifference(original, newDenoisedVersion):
+    diff = 0
+    for i in range(0, len(original)):
+        for j in range(0, len(original[0])):
+            diff += abs(original[i][j]-newDenoisedVersion[i][j])
+    return diff
+            
+
+
 def calculateBest():
     output = get_function()
+    original= get_main_function()
+    difference = None
+    bestK = -1
     for k in range(0,30):
         newDenoisedVersion = process(k, output)
-        newName = ".\\SecondPart\\format1\\F1__"+str(k+1)+".jpg"
-        plt.imsave(newName, newDenoisedVersion)
-        print("the image was saved as",newName)
-        show_my_matrix(newDenoisedVersion, 'surface'+str(k+1))
+        newDifference = getDifference(original, newDenoisedVersion)
+        if bestK==-1 or difference > newDifference:
+            difference = newDifference
+            bestK = k
+    if bestK!=-1:
+        print(bestK)
+    else:
+        print("cannot find")
+    return
+###############################
+# to analyze using the function(to find the best k):
+calculateBest()
+###############################
 
 
-#if we un-comment the next line we will get a view of all of the figures and how they look, after analysing we cant tell k=13+1 is the closer one
+
+###############################
+# to analyse yourself(to find the best k)
+#if we un-comment the next line we will get a view of all of the figures and how they look, after analysing we cant tell either k=7+1 or k=8+1 
+# (depending on the seed of random in line38) is the closest k (mostly)
 # showAllDenoised()
-
-
 #to show the original figure
-show_main()
+# show_main()
 #to show the dinoised one using the svd method
-show_my_matrix(process(13, get_function()), 'surface'+str(13))
+# show_my_matrix(process(7, get_function()), 'surface'+str(7+1))
+
+
