@@ -90,5 +90,5 @@ def main():
     else:
         return
 
-
-main()
+if __name__ == "__main__":
+    main()
