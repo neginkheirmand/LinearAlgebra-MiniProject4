@@ -15,6 +15,7 @@ def make_function_noisy(z):
     max_noise = 0.1
     t = 2 * np.random.rand(30 * 30) * max_noise - max_noise
     t = t.reshape(30, 30)
+    
     return np.add(z, t)
 
 
@@ -32,7 +33,7 @@ def show_my_matrix(Z):
     ax.set_zlabel('z')
     ax.plot_surface(X, Y, Z, rstride=1, cstride=1,
                     cmap='viridis', edgecolor='black')
-    ax.set_title('surface');
+    ax.set_title('surface')
     ax.view_init(60, 35)
     plt.show()
 
@@ -45,4 +46,7 @@ def show_main():
 def show_noisy():
     Z = get_function()
     show_my_matrix(Z)
+
+
+show_main()
 
