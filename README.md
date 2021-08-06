@@ -2,7 +2,7 @@
 
 #### First Part: Denoising Images
 
-singular value decomposition using OpenCV( or Matplotlib) library.
+singular value decomposition using OpenCV( you can also find the version of the code using Matplotlib instead) library.
 To read more about SVD and denoising:
 click  [here(denoising)](https://link.springer.com/article/10.1007/s13202-020-00938-w) and [here(SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition)
 
