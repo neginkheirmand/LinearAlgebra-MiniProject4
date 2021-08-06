@@ -12,7 +12,7 @@ click  [here(denoising)](https://link.springer.com/article/10.1007/s13202-020-00
 
 
 ![](https://github.com/neginkheirmand/LinearAlgebra-MiniProject4/blob/master/firstPartRevolutionOfK/kRevolution.gif?raw=true)
-- the gif the increase of k -> **moving towards the starting (input) image**
+- the gif demonstrates the increase of k -> **moving towards the starting (input) image**
 
 #### Second Part: Denoising mathematical figures
 ***for example:*** sin()
